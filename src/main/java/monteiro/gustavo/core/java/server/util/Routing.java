@@ -14,7 +14,7 @@ public class Routing implements IRouting {
 	@Override
 	public IRouting resource(String resource) {
 		this.resource = "/" + resource;
-		this.resource = "/" + resource + "/{id}";
+		this.resourceEl = "/" + resource + "/{id}";
 		return this;
 	}
 
