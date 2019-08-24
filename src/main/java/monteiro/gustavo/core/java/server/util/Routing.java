@@ -34,7 +34,7 @@ public class Routing implements IRouting {
 	}
 	
 	private Long extractResourceId(HttpServerExchange exchange) {
-		return Long.getLong(Parsers.getUrlParam(exchange, "id"));
+		return Long.parseLong(Parsers.getUrlParam(exchange, "id"));
 	}
 
 }
