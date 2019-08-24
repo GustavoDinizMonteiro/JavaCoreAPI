@@ -24,7 +24,7 @@ public class ItemJDBC implements ItemDAO {
 	        
 	        return items;
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 		return null;
 	}

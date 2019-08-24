@@ -1,13 +1,17 @@
 package monteiro.gustavo.core.java.server.handlers;
 
+import com.google.gson.Gson;
+
 import io.undertow.server.HttpServerExchange;
+import io.undertow.util.Headers;
+import monteiro.gustavo.core.java.server.repository.impls.ItemJDBC;
 
 public class ItemHandler implements Handler {
 
 	@Override
 	public void getAll(HttpServerExchange exchange) {
-		// TODO Auto-generated method stub
-		
+		exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/json");
+		exchange.getResponseSender().send(new Gson().toJson(new ItemJDBC().list()));
 	}
 
 	@Override
